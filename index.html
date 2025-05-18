@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+    <title>Extensions</title>
+</head>
+<body>
+<header>
+    <div class="top-bar">
+        <img src="assets/images/logo.svg" alt="logo" id="logo">
+        <button class="theme-toggle-btn btn">
+            <img src="assets/images/icon-moon.svg" alt="moon icon">
+        </button>
+    </div>
+</header>
+<main>
+    <section class="hero-nav">
+        <h1>Extensions List</h1>
+        <div class="filter-btn-container">
+            <button type="button" class="btn filter-btn active">All</button>
+            <button type="button" class="btn filter-btn">Active</button>
+            <button type="button" class="btn filter-btn">Inactive</button>
+        </div>
+    </section>
+    <section class="extensions-grid">
+        <article class="extension-item">
+            <div class="extension-top-half">
+                <img class="extension-icon" src="assets/images/logo-devlens.svg" alt="dev lens">
+                <div class="extension-details-wrapper">
+                    <h2>DevLens</h2>
+                    <p>Quickly inspect page layouts and visualize element boundaries.</p>
+                </div>
+            </div>
+            <div class="extension-bottom-half">
+                <button type="button" class="btn remove-btn">Remove</button>
+                <div class="on-off-toggle-container"></div>
+            </div>
+        </article>
+    </section>
+</main>
+</body>
+</html>
