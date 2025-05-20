@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
-    <script src="app.js" defer></script>
+    <script src="app.js" type="module"></script>
     <title>Extensions</title>
 </head>
 <body>
@@ -21,12 +21,12 @@
     <section class="hero-nav">
         <h1>Extensions List</h1>
         <div class="filter-btn-container">
-            <button type="button" class="btn filter-btn active">All</button>
-            <button type="button" class="btn filter-btn">Active</button>
-            <button type="button" class="btn filter-btn">Inactive</button>
+            <button type="button" class="btn filter-btn active" data-filter-all>All</button>
+            <button type="button" class="btn filter-btn" data-filter-active>Active</button>
+            <button type="button" class="btn filter-btn" data-filter-inactive>Inactive</button>
         </div>
     </section>
-    <section class="extensions-grid">
+    <section class="extensions-grid" data-extension-grid>
         <!--        <article class="extension-item">-->
         <!--            <div class="extension-top-half">-->
         <!--                <img class="extension-icon" src="assets/images/logo-devlens.svg" alt="dev lens">-->

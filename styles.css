@@ -29,12 +29,11 @@
 
 html {
     font-size: 62.5%;
-    height: 100%;
     font-family: "Noto Sans", sans-serif;;
 }
 
 body {
-    height: 100%;
+    min-height: 100vh;
     padding: 1.6em;
     background: var(--gradient);
 }
@@ -133,14 +132,19 @@ header, main {
     display: grid;
     padding-block: 1em;
     gap: 1em;
+    margin-bottom: 2em;
 
     @media (min-width: 768px) {
         grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+        grid-auto-rows: 1fr;
     }
 }
 
 /* Card */
 .extension-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     background-color: var(--neutral-0);
     padding: 2em;
     border-radius: 2em;
@@ -167,6 +171,7 @@ header, main {
     }
 
     .extension-bottom-half {
+        margin-top: auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
