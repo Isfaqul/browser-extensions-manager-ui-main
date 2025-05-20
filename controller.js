@@ -26,12 +26,12 @@ async function Controller() {
 
     function handleTabChange(tab) {
         // Update the currentTab whenever it's updated
-        console.log(tab)
         currentTab = tab;
     }
 
     function handleExtensionToggle(id) {
         model.toggleExtension(id); // Update data
+        const TOGGLE_RENDER_DELAY = 150;
 
         // Fetch data accordingly
         let data;
@@ -43,11 +43,12 @@ async function Controller() {
         // Render in after 200ms to allow switch toggle to show
         setTimeout(() => {
             view.renderExtensions(data)
-        }, 150);
+        }, TOGGLE_RENDER_DELAY);
     }
 
     function handleExtensionRemoval(id) {
         model.removeExtension(id);
+        const REMOVE_RENDER_DELAY = 100;
 
         // Fetch data accordingly
         let data;
@@ -59,7 +60,7 @@ async function Controller() {
         // Render in after 200ms to allow switch toggle to show
         setTimeout(() => {
             view.renderExtensions(data)
-        }, 100);
+        }, REMOVE_RENDER_DELAY);
     }
 
     function handleThemeToggle(button) {

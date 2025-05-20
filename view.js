@@ -1,6 +1,5 @@
 function View() {
     const container = document.querySelector('.extensions-grid');
-    let currentTab = "all";
     let currentTheme = 'light';
 
     // Render Extensions
@@ -51,9 +50,8 @@ function View() {
                 removeClass(target.parentElement.children, "active")
                 addClass(target, "active")
 
-                currentTab = target.value;  // update current Tab value
-                filterHandler(currentTab); // To handle filtering logic
-                tabChangeHandler(currentTab); // To update current Tab in Controller
+                filterHandler(target.value); // To handle filtering logic
+                tabChangeHandler(target.value); // To update current Tab in Controller
             }
         });
     }
@@ -96,7 +94,7 @@ function View() {
         themeButton.addEventListener('click', (e) => {
             currentTheme = currentTheme === 'light' ? 'dark' : 'light';
             document.body.classList.toggle('dark');
-            
+
             themeVarHandler(currentTheme);
             handler(themeButton)
         })
