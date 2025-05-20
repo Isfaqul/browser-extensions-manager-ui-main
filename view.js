@@ -39,17 +39,18 @@ function View() {
         return element;
     }
 
+
     function bindFilterExtensions(filterHandler, tabChangeHandler) {
         const filterBtnContainer = document.querySelector('.filter-btn-container');
         filterBtnContainer.addEventListener('click', (e) => {
             const target = e.target;
             if (target.classList.contains('filter-btn')) {
-                // Handle active class toggle
+
+                // Handle active class toggle in filter buttons
                 removeClass(target.parentElement.children, "active")
                 addClass(target, "active")
 
-                // update current Tab value
-                currentTab = target.value;
+                currentTab = target.value;  // update current Tab value
                 filterHandler(currentTab); // To handle filtering logic
                 tabChangeHandler(currentTab); // To update current Tab in Controller
             }
@@ -63,7 +64,7 @@ function View() {
         })
     }
 
-    // Helper to add classes
+    // Helper to add class
     function addClass(element, className) {
         element.classList.add(className);
     }
