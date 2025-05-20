@@ -72,11 +72,6 @@ header, main {
         &:hover {
             background-color: var(--neutral-300);
         }
-
-        &:focus {
-            outline: 2px solid var(--red-500);
-            outline-offset: 2px;
-        }
     }
 }
 
@@ -249,4 +244,8 @@ header, main {
     }
 }
 
-
+/* Focus outline on Elements */
+.remove-btn:focus, .filter-btn:focus, .theme-toggle-btn:focus {
+    outline: 2px solid var(--red-500);
+    outline-offset: 1px;
+}

@@ -21,30 +21,30 @@
     <section class="hero-nav">
         <h1>Extensions List</h1>
         <div class="filter-btn-container">
-            <button type="button" class="btn filter-btn active" data-filter-all>All</button>
-            <button type="button" class="btn filter-btn" data-filter-active>Active</button>
-            <button type="button" class="btn filter-btn" data-filter-inactive>Inactive</button>
+            <button type="button" class="btn filter-btn active" value="all" data-filter-all>All</button>
+            <button type="button" class="btn filter-btn" value="active" data-filter-active>Active</button>
+            <button type="button" class="btn filter-btn" value="inactive" data-filter-inactive>Inactive</button>
         </div>
     </section>
     <section class="extensions-grid" data-extension-grid>
-        <!--        <article class="extension-item">-->
-        <!--            <div class="extension-top-half">-->
-        <!--                <img class="extension-icon" src="assets/images/logo-devlens.svg" alt="dev lens">-->
-        <!--                <div class="extension-details-wrapper">-->
-        <!--                    <h2>DevLens</h2>-->
-        <!--                    <p>Quickly inspect page layouts and visualize element boundaries.</p>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--            <div class="extension-bottom-half">-->
-        <!--                <button type="button" class="btn remove-btn">Remove</button>-->
-        <!--                <div class="on-off-toggle-container">-->
-        <!--                    <label class="switch">-->
-        <!--                        <input type="checkbox">-->
-        <!--                        <span class="slider round"></span>-->
-        <!--                    </label>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </article>-->
+        <article class="extension-item">
+            <div class="extension-top-half">
+                <img class="extension-icon" src="assets/images/logo-devlens.svg" alt="dev lens">
+                <div class="extension-details-wrapper">
+                    <h2>DevLens</h2>
+                    <p>Quickly inspect page layouts and visualize element boundaries.</p>
+                </div>
+            </div>
+            <div class="extension-bottom-half">
+                <button type="button" class="btn remove-btn">Remove</button>
+                <div class="on-off-toggle-container">
+                    <label class="switch">
+                        <input type="checkbox" class="extension-toggle-switch">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </article>
     </section>
 </main>
 </body>
