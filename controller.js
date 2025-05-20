@@ -4,14 +4,14 @@ import View from './view.js';
 async function Controller() {
     let model = await Model();
     let view = View();
+    let currentTab = "all"; // All by default
 
     // Initial render
     view.renderExtensions(model.getAllExtensions())
     // Bind handlers
-    view.bindFilterExtensions(handleFilterButton)
+    view.bindFilterExtensions(handleFilterButton, handleTabChange)
     view.bindExtensionToggle(handleExtensionToggle)
     view.bindExtensionRemoval(handleExtensionRemoval)
-
 
     function handleFilterButton(value) {
         let data;
@@ -22,10 +22,14 @@ async function Controller() {
         view.renderExtensions(data);
     }
 
+    function handleTabChange(tab) {
+        // Update the currentTab whenever it's updated
+        console.log(tab)
+        currentTab = tab;
+    }
+
     function handleExtensionToggle(id) {
         model.toggleExtension(id); // Update data
-
-        let currentTab = view.getCurrentTab() // Get the current filterTab
 
         // Fetch data accordingly
         let data;
@@ -42,8 +46,6 @@ async function Controller() {
 
     function handleExtensionRemoval(id) {
         model.removeExtension(id);
-
-        let currentTab = view.getCurrentTab() // Get the current filterTab
 
         // Fetch data accordingly
         let data;

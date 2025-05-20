@@ -39,7 +39,7 @@ function View() {
         return element;
     }
 
-    function bindFilterExtensions(filterHandler) {
+    function bindFilterExtensions(filterHandler, tabChangeHandler) {
         const filterBtnContainer = document.querySelector('.filter-btn-container');
         filterBtnContainer.addEventListener('click', (e) => {
             const target = e.target;
@@ -50,7 +50,8 @@ function View() {
 
                 // update current Tab value
                 currentTab = target.value;
-                filterHandler(currentTab);
+                filterHandler(currentTab); // To handle filtering logic
+                tabChangeHandler(currentTab); // To update current Tab in Controller
             }
         });
     }
@@ -78,9 +79,6 @@ function View() {
         })
     }
 
-    function getCurrentTab() {
-        return currentTab;
-    }
 
     function bindExtensionRemoval(handler) {
         container.addEventListener('click', (e) => {
@@ -91,7 +89,7 @@ function View() {
         })
     }
 
-    return {renderExtensions, bindFilterExtensions, getCurrentTab, bindExtensionToggle, bindExtensionRemoval}
+    return {renderExtensions, bindFilterExtensions, bindExtensionToggle, bindExtensionRemoval}
 }
 
 export default View;
