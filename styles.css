@@ -27,6 +27,23 @@
     box-sizing: border-box;
 }
 
+.dark {
+    --neutral-900: hsl(0, 0%, 100%);
+    --neutral-800: hsl(0, 0%, 95%);
+    --neutral-700: hsl(0, 0%, 85%);
+    --neutral-600: hsl(0, 0%, 70%);
+    --neutral-300: hsl(0, 0%, 50%);
+    --neutral-200: hsl(0, 0%, 30%);
+    --neutral-100: hsl(0, 0%, 20%);
+    --neutral-0: hsl(0, 0%, 10%);
+
+    --red-400: hsl(3, 86%, 64%);
+    --red-500: hsl(3, 71%, 56%);
+    --red-700: hsl(3, 77%, 44%);
+
+    --gradient: linear-gradient(180deg, #1b1f22 0%, #121416 100%)
+}
+
 html {
     font-size: 62.5%;
     font-family: "Noto Sans", sans-serif;;
@@ -248,4 +265,18 @@ header, main {
 .remove-btn:focus, .filter-btn:focus, .theme-toggle-btn:focus {
     outline: 2px solid var(--red-500);
     outline-offset: 1px;
+}
+
+/* Hide sun element by default */
+#sun-icon {
+    display: none;
+}
+
+/* Handle Logo Color Change on theme toggle */
+body.dark #logo {
+    fill: var(--neutral-900);
+}
+
+body:not(.dark) #logo {
+    fill: var(--neutral-900);
 }

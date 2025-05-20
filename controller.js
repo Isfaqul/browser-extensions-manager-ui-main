@@ -5,6 +5,7 @@ async function Controller() {
     let model = await Model();
     let view = View();
     let currentTab = "all"; // All by default
+    let currentTheme = 'light' // Light by default
 
     // Initial render
     view.renderExtensions(model.getAllExtensions())
@@ -12,6 +13,7 @@ async function Controller() {
     view.bindFilterExtensions(handleFilterButton, handleTabChange)
     view.bindExtensionToggle(handleExtensionToggle)
     view.bindExtensionRemoval(handleExtensionRemoval)
+    view.bindToggleTheme(handleThemeToggle, handleThemeVarUpdate)
 
     function handleFilterButton(value) {
         let data;
@@ -58,6 +60,20 @@ async function Controller() {
         setTimeout(() => {
             view.renderExtensions(data)
         }, 100);
+    }
+
+    function handleThemeToggle(button) {
+        if (currentTheme === "light") {
+            view.hideElement(button.querySelector("#sun-icon"));
+            view.showElement(button.querySelector("#moon-icon"));
+        } else {
+            view.hideElement(button.querySelector("#moon-icon"));
+            view.showElement(button.querySelector("#sun-icon"));
+        }
+    }
+
+    function handleThemeVarUpdate(theme) {
+        currentTheme = theme;
     }
 
 }

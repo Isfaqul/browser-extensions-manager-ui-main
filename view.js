@@ -1,6 +1,7 @@
 function View() {
     const container = document.querySelector('.extensions-grid');
     let currentTab = "all";
+    let currentTheme = 'light';
 
     // Render Extensions
     function renderExtensions(extensions) {
@@ -90,7 +91,34 @@ function View() {
         })
     }
 
-    return {renderExtensions, bindFilterExtensions, bindExtensionToggle, bindExtensionRemoval}
+    function bindToggleTheme(handler, themeVarHandler) {
+        const themeButton = document.querySelector('.theme-toggle-btn');
+        themeButton.addEventListener('click', (e) => {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.body.classList.toggle('dark');
+            
+            themeVarHandler(currentTheme);
+            handler(themeButton)
+        })
+    }
+
+    function hideElement(element) {
+        element.style.display = 'none';
+    }
+
+    function showElement(element) {
+        element.style.display = 'block';
+    }
+
+    return {
+        renderExtensions,
+        bindFilterExtensions,
+        bindExtensionToggle,
+        bindExtensionRemoval,
+        bindToggleTheme,
+        hideElement,
+        showElement
+    }
 }
 
 export default View;
